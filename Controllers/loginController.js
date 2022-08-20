@@ -2,7 +2,8 @@ const path = require('path');
 const fs = require('fs');
 const User = require('../models/User')
 const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcryptjs');
+const Session = require('../models/Session')
 
 
 
@@ -68,8 +69,19 @@ const loginView = (req, res) =>{
                                     console.log(err);
                                 }
                                 if(success){ 
-                                    let token =jwt.sign(JSON.stringify(user._id),'jesus is king');
-                                    console.log(token);
+                                   /*  let token =jwt.sign(JSON.stringify(user._id),'jesus is king');
+                                    console.log(token); */
+                                    const newSession = new Session({UserId:user._id});
+                                    newSession.save((err, result) =>{
+                                        if(err){
+                                            console.log(err);
+        
+                                        }
+                                        else{
+                                            console.log(result);
+                                        }
+                                    })
+
                                 } else {
                                     console.log('mot de passe incorrect')
                                 }

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const SessionSchema = new mongoose.Schema({
     UserId : {
-        type: Number,
+        type: Object,
         required: true,
     }
 
