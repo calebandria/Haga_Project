@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/cef3311b4c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./signIn/style.css">
+    <title>S'inscrire</title>
+</head>
+<body>
+    <form method="post" class="container">
+        <legend>S'inscrire</legend>
+        <fieldset>
+            <div class="subCont">
+                <input type="text" class="firstname" placeholder="Prénom" name ="firstname" required>
+                <input type="text" class="familyname" placeholder="Nom de famille" name ="familyname" required>
+            </div>
+                <input type="text" class="phoneNumber" placeholder="Numero de mobile ou e-mail" name="email" required>
+            <div class="subCont1" >
+                <input type="password" id="password" placeholder="Nouveau mot de passe" name="password" required>
+               <i class="fa-solid fa-eye" id="togglePassword"></i>
+            </div> 
+            <div class="subCont1">
+                <input type="password" id="passwordConfirm" placeholder="Confirmer mot de passe" name="confirm" required>
+                <i class="fa-solid fa-eye" id="togglePasswordconfirm"></i>
+            </div> 
+            <input type="submit" formaction="/sinscrire" class="sinscrire">
+        </fieldset>
+    </form>
+    <script src="./signIn/script.js"></script>
+</body>
+</html>

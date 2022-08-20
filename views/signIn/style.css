@@ -1,0 +1,81 @@
+body{
+    background-color: rgb(59, 55, 55);
+}
+legend{
+    color:wheat;
+    font-family:fantasy ;
+    font-size: larger;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    background-color:rgb(139, 161, 154);
+    row-gap: 1em;
+    margin: 20vh 40vw ;
+    padding-top: 80px;
+    padding-bottom: 80px ; 
+    width: 500px;
+
+}
+fieldset{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+    border: none;
+    position: relative;
+}
+input{
+    padding: 1em;
+    border: none;
+    border-radius: 5px;
+}
+button{
+    padding: 1em;
+    border: none;
+    border-radius:5px;
+    background-color: rgb(104, 228, 74) ;
+}
+.sinscrire{
+    font-size: large;
+    color: whitesmoke;
+    font-weight: bolder;
+    background-color: rgb(104, 228, 74) ;
+
+}
+.dateOfBirth{
+    display: flex;
+    justify-content:space-between;
+}
+select{
+    padding: 1em;
+    width: 150px;
+    border: none;
+    border-radius: 5px;
+}
+.spclabel{
+    color: rgb(94, 71, 71);
+    font-family:fantasy ;
+    font-size: small;
+}
+.gender{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(71, 74, 87);
+}
+.sinscrire:hover{
+    cursor: pointer;
+}
+.subCont1{
+    display: flex;
+    flex-direction: column;
+    position:relative;
+}
+.subCont1 > i{
+    position: absolute;
+    align-self: flex-end;
+    bottom:1.5vh;
+    top: 1.5vh;
+    right: 5px;
+  
+}
