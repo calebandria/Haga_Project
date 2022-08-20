@@ -57,23 +57,30 @@ const loginView = (req, res) =>{
             req.on('data', chunk =>{
                 let data = (chunk.toString().split("&")).map(element =>element.slice(element.indexOf("=")+1));
                 console.log(data)
-                User.exists({ email: data[0]}, (err, doc) =>{
+                User.findOne({ email: data[0]}, (err, user) =>{
                     if (err){
                         console.log(err)
-                    }else {
-                        console.log("Result:", doc)
-                       if(doc){
+                    } else if(user) {
+                        console.log("Result:", user)
                         try {
-                            console.log('Result :',doc._id.toString())
-                            let token =jwt.sign(doc,'jesus is king', { expiresIn:'1h'});
-                            console.log(token);
-                        } catch (error) {
+                             bcrypt.compare(data[1],user.password, (err,success) =>{
+                                if(err){
+                                    console.log(err);
+                                }
+                                if(success){ 
+                                    let token =jwt.sign(JSON.stringify(user._id),'jesus is king');
+                                    console.log(token);
+                                } else {
+                                    console.log('mot de passe incorrect')
+                                }
+                            })
+                            
+                      } 
+                        catch (error) {
                             console.log(error)
-                        }
-                        
-
-                       }
-                        
+                        }     
+                    } else {
+                        console.log('email non existant')
                     }
                 })
             })
